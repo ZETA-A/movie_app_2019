@@ -1,28 +1,46 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 
-function Food({favourite}) {
-  return <h1>I like {favourite}</h1>;
+function Food({name, picture}) {
+  return <div>
+    <h2>I Like {name}</h2>
+    <img src={picture} />
+  </div>
 }
 
 const foodILike = [
   {
     name: "YunUaHwel",
-    Image: "https://hoitube-image-production.s3.amazonaws.com/onul_hoi_1573643602fdf437637c.jpg"
+    image: "https://hoitube-image-production.s3.amazonaws.com/onul_hoi_1573643602fdf437637c.jpg"
   },
   {
     name: "YaBaWiSuNDae",
-    Image: "https://lh3.googleusercontent.com/proxy/6T-m-XFF5p-m5KP9VokH26Rxva-FJj6-cvzu-85cjwmIOXpz4g4QHOpLSC0f4uNlQg4wDuZCg03vtJ1kFHFjgAM7YmOWWtY3XzBPKkjVQsoAz67rYKcyWPDaFHJ-7m4znGY0DE4yWDjFTb1n_wFDG7Bpab4L5QlvtfXGxRxvdqMMQtiGsZUFM8G0Q18NZaCKB2TjMr3pole0nsyZyJKcbNU061AxHvOWqnwia6i34V0ZZoCmUujj3tTSdI1otqxMJmPgx3hhCXgqPLlaZGvYX932rQ0gLiys3pZPzjri9I0xrQqUch8xg85IMnT1BgxAz9-DIpQl3UWDnaXPlz3E6p5se3dxajSdx8lOCUFS2tUSqwID364VZg"
+    image: "http://m.sokchomall.co.kr/web/product/big/20200512/6366d313b0ee2da2f65843d4a4ab9656.jpg"
   },
   {
-    name: ""
+    name: "Kimchi",
+    image: "https://i.ytimg.com/vi/eTucCw1w6Ak/maxresdefault.jpg"
+  },
+  {
+    name: "BoSsam",
+    image: "https://img1.daumcdn.net/thumb/R720x0/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fliveboard%2FSNUH%2F3b80ed1c420a47a0af3c411cfc00326c.JPG"
+  },
+  {
+    name: "Cider",
+    image: "http://ccbk.co.kr/images/product/detail/product106.jpg"
   }
 ]
+
+function renderFood(dish) {
+  console.log(dish);
+}
 
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
+      {foodILike.map(renderFood)}
     </div>
   )
-}
+};
+
 export default App;
